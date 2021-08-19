@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 RUN sed 's/bg.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list -i.bak
+RUN  apt-get clean
 RUN apt-get update 
 RUN apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql  php5-ldap
