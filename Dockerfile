@@ -1,8 +1,5 @@
-FROM ubuntu:14.04
-RUN sed 's/bg.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list -i.bak
-RUN  apt-get clean
-RUN apt-get update 
-RUN apt-get -y upgrade
+FROM ubuntu
+RUN apt-get update && apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql  php5-ldap
 RUN easy_install supervisor
 ADD ./scripts/start.sh /start.sh
