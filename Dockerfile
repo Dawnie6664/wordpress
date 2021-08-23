@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu
 RUN sed 's/bg.archive.ubuntu.com/archive.ubuntu.com/g' /etc/apt/sources.list -i.bak
 RUN  apt-get clean
 RUN apt-get update 
